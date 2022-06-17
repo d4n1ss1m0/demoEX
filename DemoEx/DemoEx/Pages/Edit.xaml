@@ -1,0 +1,56 @@
+﻿<Window  x:Class="DemoEx.Pages.Edit"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DemoEx.Pages"
+        mc:Ignorable="d"
+        Title="Edit" Height="450" Width="800"
+        DataContextChanged="Window_DataContextChanged">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="AUTO"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="60"></RowDefinition>
+          
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.ColumnSpan="2"  Orientation="Horizontal" Background="#FEA9AB" Grid.Row="0" Height="100">
+            <Image Margin="10 0 0 0" Height="60"  Source="../Resources/Черновик.png"/>
+            <TextBlock TextAlignment="Center" Margin="170 20 0 0" FontFamily="Sans Serif"  Height="60"  FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Center" >Черновик 2032™</TextBlock>
+        </StackPanel>
+        
+        <TextBlock FontSize="30" FontFamily="Sans Serif" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="0"> Название</TextBlock>
+        <TextBox Text="{Binding Title}" Margin="10 0 0 0 " Width="350" FontSize="30" FontFamily="Sans Serif" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Row="1" Grid.Column="1"></TextBox>
+
+        <TextBlock FontSize="30" FontFamily="Sans Serif" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="2" Grid.Column="0">Количество в уп.</TextBlock>
+        <TextBox Text="{Binding CountInPack}" Margin="10 0 0 0 " Width="350" FontSize="30" FontFamily="Sans Serif" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Row="2" Grid.Column="1"></TextBox>
+
+        <TextBlock FontSize="30" FontFamily="Sans Serif" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="3" Grid.Column="0">ед. изм</TextBlock>
+        <TextBox Text="{Binding Unit}" Margin="10 0 0 0 " Width="350" FontSize="30" FontFamily="Sans Serif" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Row="3" Grid.Column="1"></TextBox>
+
+        <TextBlock FontSize="30" FontFamily="Sans Serif" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="4" Grid.Column="0">Мин. количество</TextBlock>
+        <TextBox Text="{Binding MinCount}" Margin="10 0 0 0 " Width="350" FontSize="30" FontFamily="Sans Serif" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Row="4" Grid.Column="1"></TextBox>
+
+        <TextBlock FontSize="30" FontFamily="Sans Serif" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="5" Grid.Column="0">Описание</TextBlock>
+        <TextBox Text="{Binding Description}" Margin="10 0 0 0 " Width="350" FontSize="30" FontFamily="Sans Serif" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Row="5" Grid.Column="1"></TextBox>
+       
+        <TextBlock FontSize="30" FontFamily="Sans Serif" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="6" Grid.Column="0"> Стоимость</TextBlock>
+        <TextBox  Text="{Binding Cost}" Margin="10 0 0 0 " Width="350" FontSize="30" FontFamily="Sans Serif" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Row="6" Grid.Column="1"></TextBox>
+
+        <TextBlock FontSize="30" FontFamily="Sans Serif" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="7" Grid.Column="0">Тип материала</TextBlock>
+        <ComboBox x:Name="MaterialTypes" Margin="10 0 0 0 " Width="350" FontSize="30" FontFamily="Sans Serif" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Row="7" Grid.Column="1"></ComboBox>
+
+        <Button Height="40" x:Name="DeleteButton"  Click="DeleteButton_Click"  FontSize="14" Background="#FEA9AB" FontFamily="Sans Serif" Padding="10" Width="200" Grid.Row="8" Grid.Column="0">Удалить</Button>
+        <Button Height="40" x:Name="EditButton" Click="EditButton_Click" FontSize="14"  Background="#FEA9AB" FontFamily="Sans Serif" Padding="10" Width="200" Grid.Row="8" Grid.Column="1">Редактировать</Button>
+    </Grid>
+</Window>
